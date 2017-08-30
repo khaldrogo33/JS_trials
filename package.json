@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "start":"node BuildScripts/srcServer.js "
+    "start": "babel-node BuildScripts/srcServer.js ",
+    "lint": "esw webpack.config.* src BuildScripts --color",
+    "lint:watch": "npm run lint -- -- watch"
   },
   "author": "Alex Pavia",
   "license": "MIT",

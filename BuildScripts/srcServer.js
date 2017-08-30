@@ -1,16 +1,10 @@
-/*
-  JS server
- */
-import webpack from 'webPack';
-//import start from start 'start';
-import path from 'path';
 import express from 'express';
+import path from 'path';
+import webpack from 'webpack';
+import open from 'open';
 import config from '../webpack.config.dev';
 
-
-var path = require ('path');
-var open = require('open')
-
+/* eslint-disable no-console */
 const port = 52261;
 const app = express();
 const compiler = webpack(config);
@@ -36,5 +30,5 @@ app.listen(port,function(err)
     {
       open('http://localhost:' + port);
     }
-})
+});
 
