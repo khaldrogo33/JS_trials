@@ -1,14 +1,25 @@
 /*
   JS server
  */
+import webpack from 'webPack';
+//import start from start 'start';
+import path from 'path';
+import express from 'express';
+import config from '../webpack.config.dev';
 
-var express = require('express');
 
 var path = require ('path');
 var open = require('open')
 
-var port = 52261;
-var app = express();
+const port = 52261;
+const app = express();
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler,
+{
+  noInfo: true,
+  publicPath: config.output.publicPath
+}));
 
 app.get('/',function(req,res)
 {
