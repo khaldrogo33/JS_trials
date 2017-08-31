@@ -20,6 +20,11 @@ app.get('/',function(req,res)
   res.sendfile(path.join(__dirname,'../src/index.html'));
 });
 
+app.get('/',function(req,res)
+{
+  res.sendfile(path.join(__dirname,'../src/map.html'));
+});
+
 app.listen(port,function(err)
 {
   if(err)
